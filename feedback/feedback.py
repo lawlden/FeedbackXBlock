@@ -18,13 +18,10 @@ from xblock.fragment import Fragment
 # like instructors to customize this to something highly structured (not
 # "What did you think?" and "How did you like it?".
 DEFAULT_FREEFORM = "What did you learn from this? What was missing?"
-DEFAULT_LIKERT = "How would you rate this as a learning experience?"
+DEFAULT_LIKERT = "Please rate this Course"
 DEFAULT_DEFAULT = "Think about the material, and try to synthesize key " \
                   "lessons learned, as well as key gaps in our presentation."
-DEFAULT_PLACEHOLDER = "Take a little bit of time to reflect here. " \
-                      "Research shows that a meaningful synthesis will help " \
-                      "you better understand and remember material from this " \
-                      "course."
+DEFAULT_PLACEHOLDER = "Provide us feedback on this Course."
 DEFAULT_ICON = "face"
 DEFAULT_SCALETEXT = ["Excellent", "Good", "Average", "Fair", "Poor"]
 
@@ -226,7 +223,7 @@ class FeedbackXBlock(XBlock):
         )
         if self.user_vote != -1:
             _ = self.runtime.service(self, 'i18n').ugettext
-            response = _("Thank you for voting!")
+            response = _("Thank you for rating the course!")
         else:
             response = ""
         # Now, render the whole page
@@ -337,7 +334,7 @@ class FeedbackXBlock(XBlock):
                                  {})
         if 'vote' in data:
             response = {"success": True,
-                        "response": _("Thank you for voting!")}
+                        "response": _("Thank you for reviewing this course!")}
             self.runtime.publish(self,
                                  'edx.feedbackxblock.likert_provided',
                                  {'old_vote': self.user_vote,

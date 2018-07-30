@@ -7,12 +7,15 @@
     border-width: 1px;
     border-style: solid;
     border-color: rgba(0,0,0,0.1);
-    padding: 10px
+    padding: 10px;
+    margin: auto;
 }
 
 /* Little thank you message div after people vote */
 .feedback_thank_you {
+    padding-top: 10px;
     color: green;
+    text-align: center;
 }
 
 /* Label for the freeform text input. We want a little
@@ -25,6 +28,27 @@
 .feedback_block .feedback_likert_field {
     padding: 0px;
     margin: 0px;
+    text-align: center;
+}
+
+.feedback_block .feedback_likert_field legend {
+    padding-bottom: 10px;
+    text-align: center;
+    width: 100%;
+}
+
+.feedback_block .feedback_likert_scale {
+    display: inline-block;
+    text-align: center;
+    margin: auto;
+    height: auto;
+    width: auto;
+}
+
+.feedback_block .feedback_likert_scale .feedback_icon {
+    font-size: 2em;
+    height: auto;
+    padding: 1px;
 }
 
 /* The div around everything with a radio button */
@@ -35,52 +59,52 @@
     text-align:center;
     padding:0px 10px 0px 10px;
 }
+.feedback_block .feedback_likert_rating:not(:first-of-type) {
+    margin-left: -4px;
+}
+.feedback_block .feedback_likert_rating:first-of-type {
+    padding-left: 0 !important;
+}
+.feedback_block .feedback_likert_rating:last-of-type {
+    padding-right: 0 !important;
+}
 
 /* Hide checked icon */
-.feedback_icon_active { display:none; }
-.feedback_icon_inactive { display:inline-block; }
+.feedback_icon_active { display:inline-block; }
+.feedback_icon_inactive { display:none; }
 
 /* But show it if we are checked... */
-.feedback_block input[type="radio"]:checked ~ .feedback_icon_active{
-    display: inline-block;
-}
+.feedback_block input[type="radio"]:checked ~ .feedback_icon_active { display:inline-block; }
 /* ... while hiding the unchecked icon */
-.feedback_block input[type="radio"]:checked ~ .feedback_icon_inactive{
-    display: none;
-}
+.feedback_block input[type="radio"]:checked ~ .feedback_icon_inactive { display:none; }
 
-.feedback_icon {
-   border-style:solid;
-   border-width: 1px;
-   border-color: rgba(255,255,255,0);
-   padding:1px;
-   height:60px;
-}
+/* revert to inactive on hover, for re-review */
+#scale:hover .feedback_icon_inactive { display:none; }
+#scale:hover .feedback_icon_active { display:inline-block;color:rgb(0, 121, 188); }
+/* fix hover to populate all stars up to hovered star  */
+.feedback_block .feedback_likert_rating:hover .feedback_icon_active, .feedback_likert_rating:hover ~ .feedback_likert_rating .feedback_icon_inactive { display:inline-block!important; }
+.feedback_block .feedback_likert_rating:hover .feedback_icon_inactive, .feedback_likert_rating:hover ~ .feedback_likert_rating .feedback_icon_active { display:none!important; }
 
-.feedback_block input[type="radio"]:focus ~ .feedback_icon {
-   border-color: #999999;
+.feedback_likert_rating.hidey .feedback_icon_inactive {
+    display:inline-block;
 }
-
-.feedback_block input[type="radio"]:hover ~ .feedback_icon {
-   border-color: #999999;
-}
-
-.feedback_block .feedback_likert_label {
-    cursor: pointer;
-}
-
-.feedback_block .feedback_freeform_input {
-    margin-bottom: 1em;
+.feedback_likert_rating.hidey .feedback_icon_active {
+    display:none;
 }
 
 .feedback_block .feedback_freeform_area {
     height:inherit;
 }
 
-.feedback_block .feedback_rating_active {
-    color: blue;
-    font-weight: bold;
-    background-color: blanchedalmond;
+.feedback_xblock .feedback_freeform_input {
+    width: 100%;
+}
+
+.feedback_block .feedback_freeform_input textarea {
+    margin: auto;
+    width: 100%;
+    padding: 1% !important;
+    overflow-y: scroll !important;
 }
 
 .feedback_block .feedback_radio {
@@ -89,6 +113,12 @@
     padding:0px;
     margin:0px;
     position:absolute;
+}
+
+.value_label {
+    text-align: center;
+    font-size: 0.25em;
+    margin: auto;
 }
 
 .feedback_block .feedback_sr_text{
@@ -109,7 +139,11 @@
 
 .feedback_block .feedback_likert_field {
     border-style:none;
+    padding-bottom: 10px;
 }
+
 .feedback_block .feedback_submit_feedback {
-    width:100%;
+    width:50%;
+    margin: 10px auto 0 auto;
+    display: table;
 }
