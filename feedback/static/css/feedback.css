@@ -103,6 +103,7 @@
 .feedback_block .feedback_freeform_input textarea {
     margin: auto;
     width: 100%;
+    min-height: 30px !important;
     padding: 1% !important;
     overflow-y: scroll !important;
 }
