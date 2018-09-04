@@ -106,6 +106,9 @@
     padding: 1% !important;
     overflow-y: scroll !important;
 }
+.feedback_block .feedback_freeform_input textarea:focus {
+    border-color: #0079bc;  
+}
 
 .feedback_block .feedback_radio {
     opacity:0;
