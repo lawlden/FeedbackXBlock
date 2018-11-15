@@ -23,7 +23,7 @@ DEFAULT_DEFAULT = "Think about the material, and try to synthesize key " \
                   "lessons learned, as well as key gaps in our presentation."
 DEFAULT_PLACEHOLDER = "Provide us feedback on this Course."
 DEFAULT_ICON = "face"
-DEFAULT_SCALETEXT = ["Excellent", "Good", "Average", "Fair", "Poor"]
+DEFAULT_SCALETEXT = ["Poor", "Fair", "Average", "Good", "Excellent"]
 
 # Unicode alt faces are cute, but we do nulls instead for a11y.
 ICON_SETS = {'face': [""]*5,  # u"😁😊😐😞😭",
