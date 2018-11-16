@@ -106,6 +106,7 @@
     min-height: 30px !important;
     padding: 1% !important;
     overflow-y: scroll !important;
+    box-sizing: border-box;
 }
 .feedback_block .feedback_freeform_input textarea:focus {
     border-color: #0079bc;  
